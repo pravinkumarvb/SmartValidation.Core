@@ -10,14 +10,12 @@
     <Version>1.0.0</Version>
     <Description>Reusable custom validation attributes for .NET Web API (ValidPhone, PAN, NoSpecialCharacters, etc)</Description>
     <RepositoryUrl>https://github.com/yourusername/SmartValidation.Core</RepositoryUrl>
-    <PackageTags>dotnet core validation dataannotations aspnetcore</PackageTags>
+    <PackageTags>ASP.NET Core; Validation; DataAnnotations; SmartValidation</PackageTags>
+    <RepositoryUrl>https://github.com/pravinkumarvb/SmartValidation.Core</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
