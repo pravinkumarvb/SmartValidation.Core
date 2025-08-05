@@ -7,19 +7,19 @@ namespace SmartValidation.Core.Attributes
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
     public class AadharNumberAttribute : ValidationAttribute
     {
-        public override bool IsValid(object value)
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            if (value == null)
-                return true; // Handled by [Required] if needed
+            var aadhaar = value as string;
 
-            string aadhar = value.ToString().Trim();
-
-            // Aadhar must be exactly 12 digits and not start with 0 or 1
-            var regex = new Regex(@"^[2-9]{1}[0-9]{11}$");
-
-            if (!Regex.IsMatch(regex))
+            if (string.IsNullOrWhiteSpace(aadhaar))
             {
-                return new ValidationResult("Invalid Aadhar number. It must be 12 digits and not start with 0 or 1.");
+                return ValidationResult.Success;
+            }
+
+            // Aadhaar format: exactly 12 digits, cannot start with 0 or 1
+            if (!Regex.IsMatch(aadhaar, @"^[2-9]{1}[0-9]{11}$"))
+            {
+                return new ValidationResult("Invalid Aadhaar number. It must be a 12-digit number starting with digits 2–9.");
             }
 
             return ValidationResult.Success;

@@ -9,17 +9,17 @@ namespace SmartValidation.Core.Attributes
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            var aadhaar = value as string;
+            var pan = value as string;
 
-            if (string.IsNullOrWhiteSpace(aadhaar))
+            if (string.IsNullOrWhiteSpace(pan))
             {
                 return ValidationResult.Success;
             }
 
-            // Aadhaar format: exactly 12 digits, cannot start with 0 or 1
-            if (!Regex.IsMatch(aadhaar, @"^[2-9]{1}[0-9]{11}$"))
+            // PAN format: 5 letters + 4 digits + 1 letter
+            if (!Regex.IsMatch(pan, @"^[A-Z]{5}[0-9]{4}[A-Z]{1}$"))
             {
-                return new ValidationResult("Invalid Aadhaar number. It must be a 12-digit number starting with digits 2–9.");
+                return new ValidationResult("Invalid PAN number format. It should be 5 letters followed by 4 digits and 1 letter (e.g., ABCDE1234F).");
             }
 
             return ValidationResult.Success;
