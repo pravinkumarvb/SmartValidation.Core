@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netcoreapp3.1;net5.0;net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Pravinkumar V. Birajdar</Authors>
+    <PackageId>SmartValidation.Core</PackageId>
+    <Version>1.0.0</Version>
+    <Description>Reusable custom validation attributes for .NET Web API (ValidPhone, PAN, NoSpecialCharacters, etc)</Description>
+    <RepositoryUrl>https://github.com/yourusername/SmartValidation.Core</RepositoryUrl>
+    <PackageTags>dotnet core validation dataannotations aspnetcore</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+  </ItemGroup>
+
+</Project>

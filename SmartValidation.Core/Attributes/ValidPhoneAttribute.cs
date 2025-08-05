@@ -1,0 +1,37 @@
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
+
+namespace SmartValidation.Core.Attributes
+{
+    
+    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
+    public class ValidPhoneAttribute : ValidationAttribute
+    {
+        private const string DefaultErrorMessage = "Invalid phone number format.";
+
+        public ValidPhoneAttribute()
+        {
+            ErrorMessage = DefaultErrorMessage;
+        }
+
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            if (value == null)
+                return ValidationResult.Success; // Null is allowed — use [Required] for that
+
+            string phone = value.ToString();
+
+            // Accepts formats like "9876543210", "+919876543210", "91-9876543210", "0919876543210"
+            var regex = new Regex(@"^(\+91[\-\s]?|91[\-\s]?|0)?[6-9]\d{9}$");
+
+
+            if (regex.IsMatch(phone))
+            {
+                return ValidationResult.Success;
+            }
+
+            return new ValidationResult(ErrorMessage);
+        }
+    }
+}
