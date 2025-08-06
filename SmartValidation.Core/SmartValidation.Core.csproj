@@ -7,7 +7,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Pravinkumar V. Birajdar</Authors>
     <PackageId>SmartValidation.Core</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Description>
 A collection of reusable and customizable validation attributes for ASP.NET Core and .NET applications, including support for Aadhar Number, PAN, Indian Postal Code, Valid Phone, and constraints like No Special Characters or Numbers.
 </Description>
