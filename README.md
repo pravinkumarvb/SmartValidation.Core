@@ -24,25 +24,27 @@ git clone https://github.com/pravinkumarvb/SmartValidation.Core.git
 
 ##  Usage
 ```csharp
+using SmartValidation.Core.Attributes;
+
 public class UserDto
 {
     [NoSpecialCharactersOrNumbers]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     [NoSpecialCharacters]
-    public string CompanyName { get; set; }
+    public string? CompanyName { get; set; }
 
     [PanNumber]
-    public string PANNumber { get; set; }
+    public string? PANNumber { get; set; }
 
     [AadharNumber]
-    public string AadharNumber { get; set; }
+    public string? AadharNumber { get; set; }
 
     [IndianPostalCode]
-    public string PostalCode { get; set; }
+    public string? PostalCode { get; set; }
 
     [ValidPhone]
-    public string PhoneNumber { get; set; }
+    public string? PhoneNumber { get; set; }
 }
 ```
 ## Contributing
