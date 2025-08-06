@@ -8,17 +8,26 @@
     <Authors>Pravinkumar V. Birajdar</Authors>
     <PackageId>SmartValidation.Core</PackageId>
     <Version>1.0.0</Version>
-    <Description>Reusable custom validation attributes for .NET Web API (ValidPhone, PAN, NoSpecialCharacters, etc)</Description>
+    <Description>
+A collection of reusable and customizable validation attributes for ASP.NET Core and .NET applications, including support for Aadhar Number, PAN, Indian Postal Code, Valid Phone, and constraints like No Special Characters or Numbers.
+</Description>
     <RepositoryUrl>https://github.com/yourusername/SmartValidation.Core</RepositoryUrl>
-    <PackageTags>ASP.NET Core; Validation; DataAnnotations; SmartValidation</PackageTags>
+    <PackageTags>
+  ASP.NET Core; Validation; DataAnnotations; SmartValidation; 
+  AadharNumber; IndianPostalCode; NoSpecialCharacters; 
+  NoSpecialCharactersOrNumbers; PanNumber; ValidPhone
+</PackageTags>
     <RepositoryUrl>https://github.com/pravinkumarvb/SmartValidation.Core</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/pravinkumarvb/SmartValidation.Core</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <None Include="README.md" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>

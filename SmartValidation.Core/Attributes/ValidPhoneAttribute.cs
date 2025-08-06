@@ -17,10 +17,14 @@ namespace SmartValidation.Core.Attributes
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            if (value == null)
-                return ValidationResult.Success; // Null is allowed — use [Required] for that
+            // Allow null or empty — [Required] should handle that
+            if (value == null || string.IsNullOrWhiteSpace(value.ToString()))
+                return ValidationResult.Success;
 
             string phone = value.ToString();
+
+            if(string.IsNullOrEmpty(phone))
+                return ValidationResult.Success; // Null is allowed — use [Required] for that
 
             // Accepts formats like "9876543210", "+919876543210", "91-9876543210", "0919876543210"
             var regex = new Regex(@"^(\+91[\-\s]?|91[\-\s]?|0)?[6-9]\d{9}$");
