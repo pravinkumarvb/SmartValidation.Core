@@ -16,7 +16,7 @@ A lightweight and extensible library of custom validation attributes for ASP.NET
 
 ##  Installation
 
-This package will be published on NuGet soon. For now, clone or copy the code to your project.
+Clone or copy the code to your project.
 
 ```bash
 git clone https://github.com/pravinkumarvb/SmartValidation.Core.git
